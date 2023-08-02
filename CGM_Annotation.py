@@ -208,25 +208,27 @@ counter = []
     Input('upload-data', 'contents'),
     prevent_initial_call=True
 )
-
 def create_dropdowns_from_excel(excel_file):
     content_type, content_string = excel_file.split(',')
     decoded = base64.b64decode(content_string)
-
     df = pd.read_excel(decoded)
+
+    # Get the column names from the DataFrame
     column_options = [{'label': col, 'value': col} for col in df.columns]
 
     return [
         html.Label('Select timestamp column:'),
         dcc.Dropdown(
             id='timestamp-column',
-            options=column_options
+            options=column_options,
+            value=column_options[0]['value']  # Set the default value to the first column name
         ),
 
         html.Label('Select glucose column:'),
         dcc.Dropdown(
             id='glucose-column',
-            options=column_options
+            options=column_options,
+            value=column_options[1]['value']  # Set the default value to the second column name
         )
     ]
 
