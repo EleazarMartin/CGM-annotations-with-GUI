@@ -21,7 +21,7 @@ from datetime import datetime
 app = dash.Dash(__name__)
 
 
-app = dash.Dash(__name__)
+server = app.server
 
 fig = go.Figure()
 fig.update_layout(height = 700, width = 1200, title='Click points on the line to annotate and re-click to undo', title_font=dict(size=20), title_x=0.5, title_y=0.95)
