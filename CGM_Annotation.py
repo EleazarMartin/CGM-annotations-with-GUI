@@ -343,7 +343,7 @@ def save_file(n_clicks, table_data, file_name):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
 
 
 # In[ ]:
