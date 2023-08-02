@@ -20,7 +20,6 @@ from datetime import datetime
 
 app = dash.Dash(__name__)
 
-
 server = app.server
 
 fig = go.Figure()
@@ -344,7 +343,7 @@ def save_file(n_clicks, table_data, file_name):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run_server(debug=True)
 
 
 # In[ ]:
